@@ -1,0 +1,10 @@
+<h1>Trang chủ</h1>
+<% if user_signed_in? %>
+  <p>Xin chào, <%= current_user.email || current_user.phone %></p>
+  <%= button_to "Đăng xuất", destroy_user_session_path, method: :delete %>
+<% else %>
+  <div>
+    <%= link_to "Đăng nhập", new_user_session_path %>
+    <%= link_to "Đăng ký", new_user_registration_path %>
+  </div>
+<% end %>
