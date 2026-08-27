@@ -1,0 +1,32 @@
+<%= form_with model: @user, url: user_registration_path, method: :post do |f| %>
+  <% if @user.errors.any? %>
+    <div>
+      <ul>
+        <% @user.errors.full_messages.each do |message| %>
+          <li><%= message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+  <div>
+    <%= f.label :email %>
+    <%= f.email_field :email %>
+  </div>
+  <div>
+    <%= f.label :phone, "Số điện thoại" %>
+    <%= f.text_field :phone %>
+  </div>
+  <div>
+    <%= f.label :national_id, "CCCD" %>
+    <%= f.text_field :national_id %>
+  </div>
+  <div>
+    <%= f.label :password, "Mật khẩu" %>
+    <%= f.password_field :password %>
+  </div>
+  <div>
+    <%= f.label :password_confirmation, "Xác nhận mật khẩu" %>
+    <%= f.password_field :password_confirmation %>
+  </div>
+  <%= f.submit "Đăng ký" %>
+<% end %>

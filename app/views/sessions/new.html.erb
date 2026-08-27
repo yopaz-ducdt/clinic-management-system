@@ -1,0 +1,13 @@
+<%= form_with url: user_session_path, method: :post, scope: :user do |f| %>
+  <div>
+    <%= f.label :login, "Email / SĐT / CCCD" %>
+    <%= f.text_field :login %>
+  </div>
+  <div>
+    <%= f.label :password, "Mật khẩu" %>
+    <%= f.password_field :password %>
+  </div>
+  <%= f.submit "Đăng nhập" %>
+<% end %>
+<%= button_to "Đăng nhập với Google", user_google_oauth2_omniauth_authorize_path,
+    data: {turbo: false} %>

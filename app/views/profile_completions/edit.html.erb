@@ -1,0 +1,8 @@
+<h1>Hoàn tất hồ sơ</h1>
+<%= form_with model: current_user, url: profile_completion_path, method: :patch do |f| %>
+  <%= f.label :phone, "Số điện thoại" %>
+  <%= f.text_field :phone %>
+  <%= f.label :national_id, "Số  CCCD" %>
+  <%= f.text_field :national_id %>
+  <%= f.submit "Lưu thông tin" %>
+<% end %>
